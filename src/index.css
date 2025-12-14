@@ -19,6 +19,18 @@ body {
   --lightBlue: #eeeeff;
   --shadow: 0px 23px 21px -8px rgba(136, 160, 255, 0.25);
 }
+.orange-circle {
+  width: 23rem;
+  height: 23rem;
+  position: absolute;
+  background: var(--orange-gradient);
+  padding: 36px;
+  border-radius:100%;
+  right:0;
+  top: 25%;
+  z-index: 1;
+  filter: blur(250px);
+}
 
 a {
   color: inherit;
@@ -97,7 +109,7 @@ a {
 
 .secondaryText {
   color: rgb(140 139 139);
-  font-size: 0.9rem;
+  /* font-size: 0.9rem; */
 }
 .orangeText {
   color: orange;
