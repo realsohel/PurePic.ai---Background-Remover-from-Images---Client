@@ -10,7 +10,7 @@ const Hero = () => {
                 theme=='dark' && (<div className="orange-circle"/> )
             }
             <div className='relative order-2 md:order-1 flex justify-center '>
-                <div className={`md:m-12 m-4  shadow-xl  
+                <div className={`  shadow-xl  
                     ${theme=='light'? 'shadow-[0_25px_50px_-12px_rgba(0,0,0,0.2)] ': 'shadow-orange-400 '} 
                     rounded-3xl overflow-hidden`
                 }>
@@ -18,7 +18,7 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className="order-1 md:order-2 p-4">
+            <div className="order-1 md:order-2 ">
                 <h1 className='text-4xl md:text-5xl font-bold text-orange-400 mb-6 leading-tight'>
                     Pure Images, Zero Distractions. <span className={` ${theme=='light'? 'text-black ': 'text-white'} `}>Powered by AI.</span>
                 </h1>
