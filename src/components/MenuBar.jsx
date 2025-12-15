@@ -7,8 +7,15 @@ const MenuBar = () => {
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <div>
-            <nav className={`${theme == 'light' ? 'bg-white': 'dark:bg-[#0f0f0f]'}`}>
+        <div className=''>
+            <nav
+                className={`fixed top-0 w-full z-50 backdrop-blur-md
+                    ${theme === 'light'
+                    ? 'bg-white/60'
+                    : 'bg-[#0f0f0f]/60'
+                    }
+                `}
+            >
                 <div className="max-w-8xl mx-auto px-2 py-2 flex justify-between items-center">
                     
                     
@@ -39,7 +46,7 @@ const MenuBar = () => {
 
                         </div>
                         {/* Mobile Humburger */}
-                        <div className="flex md:hidden">
+                        <div className="flex md:hidden z-50">
                             <button onClick={()=>setMenuOpen(!menuOpen)}>
                                 {menuOpen ? <X size={28}/> : <Menu size={28}/>}
                             </button>
@@ -49,7 +56,7 @@ const MenuBar = () => {
 
                 {/* Mobile Menu */}
                 {menuOpen && (
-                    <div className="md:hidden block absolute  top-18 right-6 bg-white shadow-black shadow-xl rounded-md   items-center w-40">
+                    <div className=" md:hidden block absolute  top-16 right-6  bg-white shadow-black shadow-xl rounded-md   items-center w-40">
                             <div className="my-4 flex flex-col space-y-4">
                                 <button className='button mx-6 '>Login</button>
                                 <button className='button mx-6 '>Signup</button>

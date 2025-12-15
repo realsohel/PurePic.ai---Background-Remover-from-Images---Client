@@ -4,7 +4,7 @@ import BGRemoval from '../components/BGRemoval'
 
 const Home = () => {
     return (
-        <div className='p-8 w-full '>
+        <div className='px-8 py-28 w-full '>
             
             <Hero/>
             <BGRemoval/>
