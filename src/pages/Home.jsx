@@ -1,6 +1,7 @@
 import React from 'react'
 import Hero from '../components/Hero'
 import BGRemoval from '../components/BGRemoval'
+import BGSlider from '../components/BGSlider'
 
 const Home = () => {
     return (
@@ -8,6 +9,7 @@ const Home = () => {
             
             <Hero/>
             <BGRemoval/>
+            <BGSlider/>
 
         </div>
     )
