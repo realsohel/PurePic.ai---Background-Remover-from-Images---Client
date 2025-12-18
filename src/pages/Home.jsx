@@ -2,6 +2,7 @@ import React from 'react'
 import Hero from '../components/Hero'
 import BGRemoval from '../components/BGRemoval'
 import BGSlider from '../components/BGSlider'
+import Pricing from '../components/Pricing'
 
 const Home = () => {
     return (
@@ -10,6 +11,7 @@ const Home = () => {
             <Hero/>
             <BGRemoval/>
             <BGSlider/>
+            <Pricing/>
 
         </div>
     )

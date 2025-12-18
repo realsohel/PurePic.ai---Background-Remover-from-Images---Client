@@ -75,3 +75,32 @@ export const imageMap = {
     },
 };
 
+export const plans = [
+    {
+        id: "Basic",
+        name: "Basic Package",
+        price: 499,
+        credits: "100 credits",
+        description: "Perfect for personal projects, quick edits, and casual image background removal.",
+        popular: false
+    },
+    {
+        id: "Premium",
+        name: "Premium Package",
+        price: 899,
+        credits: "300 credits",
+        description: "Ideal for creators and businesses needing high-quality visuals at scale.",
+        popular: true
+    },
+    {
+        id: "Ultimate",
+        name: "Ultimate Package",
+        price: 1499,
+        credits: "1000 credits",
+        description: "Built for enterprises and power users requiring maximum output and performance.",
+        popular: false
+    }
+];
+
+
+

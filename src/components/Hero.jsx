@@ -10,7 +10,7 @@ const Hero = () => {
                 theme=='dark' && (<div className="orange-circle"/> )
             }
             <div className='relative order-2 md:order-1 flex justify-center '>
-                <div className={`  shadow-xl  
+                <div className={`  shadow-xl  border border-orange-300
                     ${theme=='light'? 'shadow-[0_25px_50px_-12px_rgba(0,0,0,0.2)] ': 'shadow-orange-400 '} 
                     rounded-3xl overflow-hidden`
                 }>
