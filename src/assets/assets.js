@@ -1,4 +1,5 @@
 import logo from "./newlogo.png"
+import logo2 from "./logo2.png"
 import video1 from "./home-page-banner.mp4";
 import video2 from "./remove-background-animation-v1_1.mp4";
 import people_og from "./people-og.webp"
@@ -13,6 +14,7 @@ import slide_icon from "./slide_icon.png"
 
 export const assets={
     logo,
+    logo2,
     video1,
     video2,
     people_og,
@@ -122,6 +124,25 @@ export const testimonials = [
         "We were impressed by its ability to account for pesky, feathery hair without making an image look jagged and amateurish.",
         author: "Michael Chen",
         handle: "@coding_newbie",
+    },
+];
+
+export const FOOTER_CONSTANTS = [
+    {
+        url: "https://github.com/realsohel",
+        logo: "https://img.icons8.com/fluent/30/000000/github.png",
+    },
+    {
+        url: "https://www.linkedin.com/in/mohd-sohel-salmani/",
+        logo: "https://img.icons8.com/fluent/30/000000/linkedin-2.png",
+    },
+    {
+        url: "https://www.instagram.com/sohail.salmani.400054",
+        logo: "https://img.icons8.com/fluent/30/000000/instagram-new.png",
+    },
+    {
+        url: "https://x.com/real_sohel_",
+        logo: "https://img.icons8.com/fluent/30/000000/twitter.png",
     },
 ];
 
