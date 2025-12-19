@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import BGRemoval from '../components/BGRemoval'
 import BGSlider from '../components/BGSlider'
 import Pricing from '../components/Pricing'
+import Testimonial from '../components/Testimonial'
 
 const Home = () => {
     return (
@@ -12,7 +13,7 @@ const Home = () => {
             <BGRemoval/>
             <BGSlider/>
             <Pricing/>
-
+            <Testimonial/>
         </div>
     )
 }
