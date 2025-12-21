@@ -2,9 +2,23 @@ import React, { useState } from 'react'
 import {assets} from "../assets/assets"
 import { useTheme } from '../context/ThemeContext';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { SignedOut, SignInButton, useClerk, UserButton, useUser } from '@clerk/clerk-react';
 const MenuBar = () => {
     const[menuOpen,setMenuOpen]= useState(false);   
     const { theme, toggleTheme } = useTheme();
+    const {openSignUp, openSignIn} = useClerk();
+    const {user} = useUser();
+    
+    const openRegister=()=>{
+        setMenuOpen(false);
+        openSignUp({});
+    }
+    
+    const openLogin=()=>{
+        setMenuOpen(false);
+        openSignIn({});
+    }
 
     return (
         <div className=''>
@@ -18,14 +32,13 @@ const MenuBar = () => {
             >
                 <div className="max-w-8xl mx-auto px-2 py-2 flex justify-between items-center">
                     
-                    
-                    <div className="flex items-center space-x-2">
-                    <img
-                        src={assets.logo}
-                        alt="app-logo"
-                        className="h-14 md:h-16 w-auto object-contain cursor-pointer"
-                    />
-                    </div>
+                    <Link  to="/" className="flex items-center space-x-2">
+                        <img
+                            src={assets.logo}
+                            alt="app-logo"
+                            className="h-14 md:h-16 w-auto object-contain cursor-pointer"
+                        />
+                    </Link>
                     
                     <div className="flex gap-4 items-center">
                         {/* Theme Toggle */}
@@ -37,13 +50,29 @@ const MenuBar = () => {
                         </button>
 
                         <div className='hidden md:flex items-center gap-4'>
-                            <button className="button text-xl font-bold hover:border-orange-400">
-                                Login
-                            </button>
-                            <button className="button text-xl font-bold">
-                                Signup
-                            </button>
-
+                            <SignedOut>
+                                <button onClick={openLogin} className="button text-xl font-bold hover:border-orange-400">
+                                    Login
+                                </button>
+                                <button onClick={openRegister} className="button text-xl font-bold">
+                                    Signup
+                                </button>
+                            </SignedOut>
+                            <SignInButton>
+                                <div className='flex items-center gap-2 sm:gap-3' >
+                                    <button className="cursor-pointer flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2.5 
+                                        rounded-full hover:scale-105 transition-all duration-500 border border-orange-300 text-white"
+                                        style={{ background: "var(--orange-gradient)" }}
+                                    >
+                                        <img src={assets.credits} alt="" height={26} width={26}/>
+                                        <p className="font-semibold">
+                                            Credits: 0
+                                        </p>
+                                    </button>
+                                    <p className="font-bold text-md hidden md:block">Hi, {user?.firstName}</p>
+                                    <UserButton />
+                                </div>
+                            </SignInButton>
                         </div>
                         {/* Mobile Humburger */}
                         <div className="flex md:hidden z-50">
@@ -57,11 +86,28 @@ const MenuBar = () => {
                 {/* Mobile Menu */}
                 {menuOpen && (
                     <div className=" md:hidden block absolute  top-16 right-6  bg-white shadow-black shadow-xl rounded-md   items-center w-40">
-                            <div className="my-4 flex flex-col space-y-4">
-                                <button className='button mx-6 '>Login</button>
-                                <button className='button mx-6 '>Signup</button>
+                        <div className="my-4 flex flex-col space-y-4">
+                            <SignedOut>
+                                <button className='button mx-6 ' onClick={openLogin} >Login</button>
+                                <button className='button mx-6 ' onClick={openRegister}>Signup</button>
+                            </SignedOut>
 
-                            </div>
+                            <SignInButton>
+                                <div className='flex flex-col items-center gap-4 p-1' >
+                                    <UserButton />
+                                    <p className="font-bold text-md text-black md:block">Hi, {user?.firstName}</p>
+                                    <button className="cursor-pointer flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2.5 
+                                        rounded-full scale-105 transition-all duration-500 border border-orange-300 text-white"
+                                        style={{ background: "var(--orange-gradient)" }}
+                                    >
+                                        <img src={assets.credits} alt="" height={26} width={26}/>
+                                        <p className="font-semibold">
+                                            Credits: 0
+                                        </p>
+                                    </button>
+                                </div>
+                            </SignInButton>
+                        </div>
                     </div>
                 )}
 

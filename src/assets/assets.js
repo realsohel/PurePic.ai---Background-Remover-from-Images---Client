@@ -1,5 +1,6 @@
 import logo from "./newlogo.png"
 import logo2 from "./logo2.png"
+import credits from "./credits.png"
 import video1 from "./home-page-banner.mp4";
 import video2 from "./remove-background-animation-v1_1.mp4";
 import people_og from "./people-og.webp"
@@ -25,7 +26,8 @@ export const assets={
     car,
     animal_og,
     animal,
-    slide_icon
+    slide_icon,
+    credits
 
 };
 

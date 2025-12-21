@@ -14,8 +14,8 @@ const Footer = () => {
             </p>
 
             <div className="flex gap-3">
-                {FOOTER_CONSTANTS.map((foot)=>(
-                    <a key={foot.id} href={foot.url} target='_blank' rel='noopener noreferrer'>
+                {FOOTER_CONSTANTS.map((foot,idx)=>(
+                    <a key={idx} href={foot.url} target='_blank' rel='noopener noreferrer'>
                         <img src={foot.logo} alt="social media" />
                     </a>
                 ))}
