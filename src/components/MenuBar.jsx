@@ -3,7 +3,7 @@ import {assets} from "../assets/assets"
 import { useTheme } from '../context/ThemeContext';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SignedOut, SignInButton, useClerk, UserButton, useUser } from '@clerk/clerk-react';
+import { SignedIn, SignedOut, SignInButton, useClerk, UserButton, useUser } from '@clerk/clerk-react';
 const MenuBar = () => {
     const[menuOpen,setMenuOpen]= useState(false);   
     const { theme, toggleTheme } = useTheme();
@@ -58,7 +58,7 @@ const MenuBar = () => {
                                     Signup
                                 </button>
                             </SignedOut>
-                            <SignInButton>
+                            <SignedIn>
                                 <div className='flex items-center gap-2 sm:gap-3' >
                                     <button className="cursor-pointer flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2.5 
                                         rounded-full hover:scale-105 transition-all duration-500 border border-orange-300 text-white"
@@ -72,7 +72,7 @@ const MenuBar = () => {
                                     <p className="font-bold text-md hidden md:block">Hi, {user?.firstName}</p>
                                     <UserButton />
                                 </div>
-                            </SignInButton>
+                            </SignedIn>
                         </div>
                         {/* Mobile Humburger */}
                         <div className="flex md:hidden z-50">
@@ -92,7 +92,7 @@ const MenuBar = () => {
                                 <button className='button mx-6 ' onClick={openRegister}>Signup</button>
                             </SignedOut>
 
-                            <SignInButton>
+                            <SignedIn>
                                 <div className='flex flex-col items-center gap-4 p-1' >
                                     <UserButton />
                                     <p className="font-bold text-md text-black md:block">Hi, {user?.firstName}</p>
@@ -106,7 +106,7 @@ const MenuBar = () => {
                                         </p>
                                     </button>
                                 </div>
-                            </SignInButton>
+                            </SignedIn>
                         </div>
                     </div>
                 )}
