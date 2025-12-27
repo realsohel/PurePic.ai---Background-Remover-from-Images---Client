@@ -8,7 +8,7 @@ const UserSyncHandler = () => {
     const {isLoaded,isSignedIn,getToken} = useAuth();
     const {user} = useUser();
     const [synced,setSynced]= useState(false);
-    const {backendUrl}=useAppContext();
+    const {backendUrl,loadUserCredits}=useAppContext();
 
     useEffect(()=>{
         const saveUser=async()=>{
@@ -36,16 +36,15 @@ const UserSyncHandler = () => {
                     {headers:{"Authorization": `Bearer ${token}`}}
                 );
 
-                console.log(response);
                 if(response.data.success==true){
                     toast.success(`Welcome ${userData.firstName}`);
-                    console.log("User uploaded Successfully")
                 }
 
                 setSynced(true);
+                await loadUserCredits();
+
             }catch(error){
                 toast.error("Some error coming. Please again later.")
-                console.log(error)
                 console.log("Error coming..")
             }
         }

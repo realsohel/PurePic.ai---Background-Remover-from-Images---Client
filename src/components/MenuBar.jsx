@@ -4,11 +4,14 @@ import { useTheme } from '../context/ThemeContext';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SignedIn, SignedOut, SignInButton, useClerk, UserButton, useUser } from '@clerk/clerk-react';
+import { useAppContext } from '../context/AppContext';
+
 const MenuBar = () => {
     const[menuOpen,setMenuOpen]= useState(false);   
     const { theme, toggleTheme } = useTheme();
     const {openSignUp, openSignIn} = useClerk();
     const {user} = useUser();
+    const {credits}=useAppContext();
     
     const openRegister=()=>{
         setMenuOpen(false);
@@ -65,8 +68,8 @@ const MenuBar = () => {
                                         style={{ background: "var(--orange-gradient)" }}
                                     >
                                         <img src={assets.credits} alt="" height={26} width={26}/>
-                                        <p className="font-semibold">
-                                            Credits: 0
+                                        <p className="text-lg font-semibold">
+                                            Credits: <span className='py-auto'> {credits} </span>
                                         </p>
                                     </button>
                                     <p className="font-bold text-md hidden md:block">Hi, {user?.firstName}</p>
@@ -101,8 +104,8 @@ const MenuBar = () => {
                                         style={{ background: "var(--orange-gradient)" }}
                                     >
                                         <img src={assets.credits} alt="" height={26} width={26}/>
-                                        <p className="font-semibold">
-                                            Credits: 0
+                                        <p className=" font-semibold">
+                                            Credits: <span className='py-auto'> {credits} </span>
                                         </p>
                                     </button>
                                 </div>
