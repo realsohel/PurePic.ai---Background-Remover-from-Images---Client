@@ -2,7 +2,7 @@ import React from 'react'
 
 const NotFound = () => {
     return (
-        <div className='py-30'>
+        <div className='px-8 py-28 w-full '>
             Not Found !
         </div>
     )

@@ -8,6 +8,8 @@ import Footer from './components/Footer';
 import { Route, Routes } from 'react-router-dom';
 import NotFound from './pages/NotFound';
 import { Toaster } from 'react-hot-toast';
+import Result from './pages/Result';
+import { RedirectToSignIn, SignedIn, SignedOut } from '@clerk/clerk-react';
 const App = () => {
   
   const { theme, toggleTheme } = useTheme();
@@ -18,6 +20,16 @@ const App = () => {
       <Toaster/>
       <Routes>
         <Route exact path='/' element={<Home/>}/>
+        <Route exact path='/result' element={
+          <>
+            <SignedIn>
+              <Result/>
+            </SignedIn>
+            <SignedOut>
+              <RedirectToSignIn/>
+            </SignedOut>
+          </>}
+        />
         <Route exact path='/*' element={<NotFound/>}/>
       </Routes>
       

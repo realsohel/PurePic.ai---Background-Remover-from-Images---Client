@@ -1,9 +1,12 @@
 import React from 'react'
 import { assets } from '../assets/assets'
 import { useTheme } from '../context/ThemeContext';
+import { useAppContext } from '../context/AppContext';
 
 const Hero = () => {
     const { theme } = useTheme();
+    const {removeBg} = useAppContext();
+
     return (
         <div className='relative grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16'>
             {
@@ -31,7 +34,7 @@ const Hero = () => {
                 </p>
                 
                 <div>
-                    <input type="file" accept='image/*' id='upload1' hidden/>
+                    <input type="file" accept='image/*' id='upload1' hidden onChange={(e)=>removeBg(e.target.files[0])}/>
                     <label
                         htmlFor="upload1"
                         style={{ background: "var(--orange-gradient)" }}

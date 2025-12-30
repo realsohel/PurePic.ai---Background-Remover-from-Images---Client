@@ -12,6 +12,7 @@ import car from "./car.webp"
 import animal_og from "./animal.webp"
 import animal from "./animal-2.webp"
 import slide_icon from "./slide_icon.png"
+import no_img from "./noimg.png"
 
 export const assets={
     logo,
@@ -27,8 +28,8 @@ export const assets={
     animal_og,
     animal,
     slide_icon,
-    credits
-
+    credits,
+    no_img,
 };
 
 export const steps = [
