@@ -10,6 +10,7 @@ import NotFound from './pages/NotFound';
 import { Toaster } from 'react-hot-toast';
 import Result from './pages/Result';
 import { RedirectToSignIn, SignedIn, SignedOut } from '@clerk/clerk-react';
+import BuyCredits from './pages/BuyCredits';
 const App = () => {
   
   const { theme, toggleTheme } = useTheme();
@@ -24,6 +25,17 @@ const App = () => {
           <>
             <SignedIn>
               <Result/>
+            </SignedIn>
+            <SignedOut>
+              <RedirectToSignIn/>
+            </SignedOut>
+          </>}
+        />
+
+        <Route exact path='/buy-credits' element={
+          <>
+            <SignedIn>
+              <BuyCredits/>
             </SignedIn>
             <SignedOut>
               <RedirectToSignIn/>

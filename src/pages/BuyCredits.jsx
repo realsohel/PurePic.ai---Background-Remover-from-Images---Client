@@ -5,7 +5,7 @@ import { useAuth, useClerk } from '@clerk/clerk-react';
 import { placeOrder } from '../service/OrderService';
 import { useAppContext } from '../context/AppContext';
 
-const Pricing = () => {
+const BuyCredits = () => {
     const{theme} = useTheme();
     const {isSignedIn, getToken} = useAuth();
     const {openSignIn} = useClerk();
@@ -28,7 +28,7 @@ const Pricing = () => {
 
     }
     return (
-        <div className='py-10 md:px-20 lg:px-20'>
+        <div className='py-16 h-full md:px-20 lg:px-20'>
             <div className="container mx-auto px-4">
 
                 <div className="mb-12 text-center">
@@ -95,4 +95,4 @@ const Pricing = () => {
     )
 }
 
-export default Pricing
+export default BuyCredits

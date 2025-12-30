@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {assets} from "../assets/assets"
 import { useTheme } from '../context/ThemeContext';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { SignedIn, SignedOut, SignInButton, useClerk, UserButton, useUser } from '@clerk/clerk-react';
 import { useAppContext } from '../context/AppContext';
 
@@ -12,6 +12,7 @@ const MenuBar = () => {
     const {openSignUp, openSignIn} = useClerk();
     const {user} = useUser();
     const {credits}=useAppContext();
+    const navigate = useNavigate();
     
     const openRegister=()=>{
         setMenuOpen(false);
@@ -66,6 +67,7 @@ const MenuBar = () => {
                                     <button className="cursor-pointer flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2.5 
                                         rounded-full hover:scale-105 transition-all duration-500 border border-orange-300 text-white"
                                         style={{ background: "var(--orange-gradient)" }}
+                                        onClick={()=>navigate("/buy-credits")}
                                     >
                                         <img src={assets.credits} alt="" height={26} width={26}/>
                                         <p className="text-lg font-semibold">
@@ -102,6 +104,7 @@ const MenuBar = () => {
                                     <button className="cursor-pointer flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2.5 
                                         rounded-full scale-105 transition-all duration-500 border border-orange-300 text-white"
                                         style={{ background: "var(--orange-gradient)" }}
+                                        onClick={()=>navigate("/buy-credits")}
                                     >
                                         <img src={assets.credits} alt="" height={26} width={26}/>
                                         <p className=" font-semibold">
