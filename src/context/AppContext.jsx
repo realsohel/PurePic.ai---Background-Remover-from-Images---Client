@@ -67,7 +67,8 @@ export const AppContextProvider=(props)=>{
             setCredits(credits-1);
         }catch(error){
             console.log(error);
-            toast.error("Errorr coming generating the image");
+            toast.error("Errorr coming generating the image. Please try again with different image.");
+            navigate("/");
         }
     }
 
