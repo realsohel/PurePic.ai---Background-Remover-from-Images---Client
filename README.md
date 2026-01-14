@@ -9,7 +9,7 @@ User authentication, authorization, and session handling are managed using **Cle
 
 ---
 ## LLD with Flowchart
-![LLD of Pure Pic.ai](https://drive.google.com/file/d/1gZaVMQQ7OuMykTu-estRlsXZ4sKcmkv6/view)
+![LLD of Pure Pic.ai](https://drive.google.com/uc?export=view&id=1gZaVMQQ7OuMykTu-estRlsXZ4sKcmkv6)
 
 
 ---
